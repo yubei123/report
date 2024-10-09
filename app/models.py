@@ -14,6 +14,20 @@ def my_token_verification_callback(jwt_header, jwt_payload):
     g.auth = jwt_payload['sub']['auth']
     return True
 
+# class route_auth():
+#     def __init__(self, auth: str):
+#         self.auth = auth
+
+#     def __call__(self, func):
+#         @wraps(func)
+#         def wrapper(*args, **kwargs):
+#             auth = set(g.auth.split(','))
+#             d_auth = set(self.auth.split(','))
+#             if not (d_auth & auth):
+#                 return {'msg': '没有此项权限！', 'code': 402}
+#             return func(*args, **kwargs)
+#         return wrapper
+
 def serialize(self):
     json = {}
     for i in self.__table__.c:
