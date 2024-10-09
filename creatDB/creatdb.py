@@ -27,7 +27,9 @@ if __name__ == '__main__':
         # db.drop_all()
         test = User(username='test', password='123', auth='实验室处理')
         test2 = User(username='test2', password='456', auth='报告分析')
+        test3 = User(username='test3', password='789', auth='实验室处理,报告分析')
         db.session.add(test)
         db.session.add(test2)
+        db.session.add(test3)
         db.session.commit()
 
