@@ -37,8 +37,7 @@ def addUser():
     if user:
         return {'msg':'用户已存在！', 'code':400}
     else:
-        u = User()
-        u.update(**{'username':username, 'password':password, 'auth':auth})
+        u = User(username=username, password=password, auth=auth)
         db.session.add(u)
         db.session.commit()
         return {'msg':'注册成功！', 'code':200}
